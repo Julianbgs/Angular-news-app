@@ -1,53 +1,43 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<nav class="navbar navbar-dark navbar-2 bg-primary mb-4">
+  <a class="navbar-brand main-logo" href="#">
+    <img src="../assets/img/logo.png" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent14" aria-controls="navbarSupportedContent14" aria-expanded="true" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <div class="navbar-collapse collapse " id="navbarSupportedContent14" style="">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="dropdown-item" (click)="addNews()">All news</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="dropdown-item" (click)="addBBCNews()">BBC News</a>
       </li>
       <li class="nav-item">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
+        <a class="dropdown-item" (click)="addCNNNews()">CNN</a>
+      </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="dropdown-item" (click)="addEntertainmentNews()">Entertainment Weekly</a>
+      </li>
+      <li class="nav-item">
+        <a class="dropdown-item" (click)="addArsNews()">Ars Technica</a>
+      </li>
+      <li class="nav-item">
+        <a class="dropdown-item" (click)="addInsiderNews()">Business Insider</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
 <div class="container">
   <div class="col-xs-8 col-xs-offset-2">
-    <button class="btn btn-primary" (click)="addNews()">Загрузить свежие новости</button>
-    <button class="btn btn-primary" (click)="addBBCNews()">Загрузить новости BBC</button>
-    <hr>
     <ul class="item__box">
       <li class="item__elem" *ngFor="let item of news.articles">
         <a class="item__link" href="{{item.url}}">
-        <h3 class="item__title">{{item.title}}</h3>
-        <div class="item__img">
-          <img src="{{item.urlToImage}}" alt="{{item.title}}">
-        </div>
-        <div class="item__dsecr">
-          {{item.description}}
-        </div>
+          <h3 class="item__title">{{item.title}}</h3>
+          <div class="item__img">
+            <img src="{{item.urlToImage}}" alt="{{item.title}}">
+          </div>
+          <div class="item__dsecr">
+            {{item.description}}
+          </div>
           <div class="item__detail">
             <p class="item__author">{{item.author}}</p>
             <span class="item__date">{{item.publishedAt | date}}</span>

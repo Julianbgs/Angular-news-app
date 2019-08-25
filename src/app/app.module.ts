@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {NewsService} from './news.service';
+import { MDBBootstrapModule, DropdownModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,9 @@ import {NewsService} from './news.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot(),
+    DropdownModule.forRoot()
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]

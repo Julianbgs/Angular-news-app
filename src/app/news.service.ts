@@ -10,6 +10,22 @@ export class NewsService {
   }
 
   getBBCNews() {
-    return this.http.get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=4ea254fb0f2c483780981a67bee871fc')
+    return this.http.get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=4ea254fb0f2c483780981a67bee871fc');
+  }
+
+  getArsNews() {
+    return this.http.get('https://newsapi.org/v2/top-headlines?sources=ars-technica&apiKey=4ea254fb0f2c483780981a67bee871fc');
+  }
+
+  getInsiderNews() {
+    return this.http.get('https://newsapi.org/v2/top-headlines?sources=business-insider-uk&apiKey=4ea254fb0f2c483780981a67bee871fc');
+  }
+
+  getCNNNews() {
+    return this.http.get('https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=4ea254fb0f2c483780981a67bee871fc');
+  }
+
+  getEntertainmentNews() {
+    return this.http.get('https://newsapi.org/v2/top-headlines?sources=entertainment-weekly&apiKey=4ea254fb0f2c483780981a67bee871fc');
   }
 }

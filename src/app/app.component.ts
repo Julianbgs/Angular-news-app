@@ -35,4 +35,36 @@ export class AppComponent implements OnInit{
         this.news = data;
       });
   }
+
+  addArsNews() {
+    this.carsService.getArsNews()
+      .subscribe((response) => {
+        const data = response;
+        this.news = data;
+      });
+  }
+
+  addInsiderNews() {
+    this.carsService.getInsiderNews()
+      .subscribe((response) => {
+        const data = response;
+        this.news = data;
+      });
+  }
+
+  addCNNNews() {
+    this.carsService.getCNNNews()
+      .subscribe((response) => {
+        const data = response;
+        this.news = data;
+      });
+  }
+
+  addEntertainmentNews() {
+    this.carsService.getEntertainmentNews()
+      .subscribe((response) => {
+        const data = response;
+        this.news = data;
+      });
+  }
 }
